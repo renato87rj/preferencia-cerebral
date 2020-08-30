@@ -14,7 +14,12 @@ const useStyles = makeStyles({
         alignItems: 'flex-start',
         justifyContent: 'center',
         margin: '15px 0 15px 15px',
-    } 
+    },
+    legend: {
+        fontWeight: 'bold',
+        color: '#333',
+        paddingTop: '15px'
+    }
 });
 
 export default function RadioForm(props) {
@@ -23,7 +28,7 @@ export default function RadioForm(props) {
     <div className={classes.questionsGroup}>
         {props.questoes.map(pergunta => (
             <FormControl component="fieldset" key={pergunta.name}>
-            <FormLabel component="legend">{pergunta.label}</FormLabel>
+            <FormLabel component="legend" className={classes.legend}>{pergunta.label}</FormLabel>
             <RadioGroup aria-label="gender" name={pergunta.name} onChange={props.onChange}>
                 {pergunta.questions.map((question, index) => 
                     <FormControlLabel key={index} value={question.value} control={<Radio />} label={question.question} />
