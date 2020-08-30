@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import RadioForm from '../RadioForm/RadioForm';
 import { Icon } from '@material-ui/core';
+import Questoes from '../../models/Questoes';
 
 const useStyles = makeStyles({
   root: {
@@ -29,7 +30,21 @@ const useStyles = makeStyles({
 });
 
 export default function SimpleCard() {
-  const classes = useStyles();
+    const classes = useStyles();
+    const [questoes, setQuestoes] = useState([]);
+    const [choices, setChoices] = useState({});
+
+    useEffect(() => {
+        setQuestoes(Questoes);
+    }, []);
+
+    function handleChange (event) {
+        setChoices({...choices, [event.target.name]: event.target.value});        
+    };
+
+    function printValues (values) {
+        console.log(values);
+    }
 
   return (
     <div className={classes.card}>
@@ -38,10 +53,17 @@ export default function SimpleCard() {
             <Typography variant="h5" component="h2" className={classes.title}>
                 Em cada uma das 25 questões a seguir, escolha uma alternativa (A, B, C ou D) e marque-a no espaço correspondente.
             </Typography>
-            <RadioForm />
+            <RadioForm questoes={questoes} onChange={handleChange}/>
         </CardContent>
         <CardActions className={classes.buttonSend}>
-            <Button variant="contained" color="primary" endIcon={<Icon>send</Icon>}>Enviar</Button>
+            <Button 
+                variant="contained" 
+                color="primary" 
+                onClick={() => printValues(choices)}
+                endIcon={<Icon>send</Icon>}
+            >
+                Enviar
+            </Button>
         </CardActions>
         </Card>
     </div>
