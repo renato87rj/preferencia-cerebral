@@ -2,8 +2,8 @@ import React from 'react';
 
 import './styles.css';
 
-import Main from './components/Main/Main';
-import Navbar from './components/Header/Navbar';
+import Main from './pages/main';
+import Navbar from './components/navbar';
 
 function App() {
   return (
