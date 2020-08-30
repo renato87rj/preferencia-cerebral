@@ -25,6 +25,7 @@ const useStyles = makeStyles({
     fontSize: 18
   },
   buttonSend: {
+    padding: '8px',
     textAlign: 'end'
   }
 });
@@ -55,7 +56,7 @@ export default function SimpleCard() {
             </Typography>
             <RadioForm questoes={questoes} onChange={handleChange}/>
         </CardContent>
-        <CardActions className={classes.buttonSend}>
+        <div className={classes.buttonSend}>
             <Button 
                 variant="contained" 
                 color="primary" 
@@ -64,7 +65,7 @@ export default function SimpleCard() {
             >
                 Enviar
             </Button>
-        </CardActions>
+        </div>
         </Card>
     </div>
   );
