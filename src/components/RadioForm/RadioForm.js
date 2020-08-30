@@ -5,23 +5,29 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Questoes from '../../models/Questoes';
+import { Button } from '@material-ui/core';
 
 import './styles.css';
 
 export default function RadioForm() {
-  const [questoes, setQuestoes] = useState([]);
-  const [values, setValues] = useState([]);
+    const [questoes, setQuestoes] = useState([]);
+    const [choices, setChoices] = useState({});
 
-  useEffect(() => {
-    setQuestoes(Questoes);
-  }, []);
+    useEffect(() => {
+        setQuestoes(Questoes);
+    }, []);
   
-  const handleChange = (event) => {
-    console.log(values);
-    setValues([event.target.name] = event.target.value);
-  };
+    function handleChange (event) {
+        setChoices({...choices, [event.target.name]: event.target.value});
+        
+        console.log(choices);
+    };
 
-  return (
+    function printValues(values) {
+        console.log(values);
+    }
+
+    return (
     <div className="questions-group">
         {questoes.map(pergunta => (
             <FormControl component="fieldset" key={pergunta.name}>
@@ -33,6 +39,7 @@ export default function RadioForm() {
             </RadioGroup>
             </FormControl>
         ))}
+        <Button size="small" onClick={() => printValues(choices)}>Ver</Button>
     </div>
   );
 }

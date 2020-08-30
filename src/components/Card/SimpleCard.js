@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import RadioForm from '../RadioForm/RadioForm';
+import { Icon } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -21,6 +22,9 @@ const useStyles = makeStyles({
   title: {
     textAlign: 'center',
     fontSize: 18
+  },
+  buttonSend: {
+    textAlign: 'end'
   }
 });
 
@@ -36,8 +40,8 @@ export default function SimpleCard() {
             </Typography>
             <RadioForm />
         </CardContent>
-        <CardActions>
-            <Button size="small">Learn More</Button>
+        <CardActions className={classes.buttonSend}>
+            <Button variant="contained" color="primary" endIcon={<Icon>send</Icon>}>Enviar</Button>
         </CardActions>
         </Card>
     </div>
