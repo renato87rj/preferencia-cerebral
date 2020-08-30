@@ -5,11 +5,22 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 
-import './styles.css';
+import { makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles({
+    questionsGroup: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+        margin: '15px 0 15px 15px',
+    } 
+});
 
 export default function RadioForm(props) {
+    const classes = useStyles();
     return (
-    <div className="questions-group">
+    <div className={classes.questionsGroup}>
         {props.questoes.map(pergunta => (
             <FormControl component="fieldset" key={pergunta.name}>
             <FormLabel component="legend">{pergunta.label}</FormLabel>
