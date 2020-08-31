@@ -43,9 +43,9 @@ export default function SimpleCard(props) {
         <div className={classes.buttonSend}>
             <Button 
                 variant="contained" 
-                color="primary" 
-                onClick={() => props.onClick()}
+                color="primary"
                 endIcon={<Icon>send</Icon>}
+                href="/resultados"
             >
                 Enviar
             </Button>

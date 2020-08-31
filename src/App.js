@@ -2,14 +2,14 @@ import React from 'react';
 
 import './styles.css';
 
-import Main from './pages/main';
 import Navbar from './components/navbar';
+import Routes from './router';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Main />
+      <Routes />
     </div>
   );
 }
