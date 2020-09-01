@@ -31,12 +31,12 @@ const useStyles = makeStyles((theme) => ({
             bottom: 0,
             left: 0,
             right: 0,
-            background: 'url('+Cerebro+') center center',
+            background: 'url(' + Cerebro + ') center center',
             backgroundSize: 'cover',
             opacity: '0.1',
         }
     },
-    
+
     cerebroEsquerdo: {
         position: 'relative',
         zIndex: 1,
@@ -48,13 +48,13 @@ const useStyles = makeStyles((theme) => ({
             bottom: 0,
             left: 0,
             right: 0,
-            background: 'url('+Cerebro+') center center',
+            background: 'url(' + Cerebro + ') center center',
             transform: 'scaleX(-1)',
             backgroundSize: 'cover',
             opacity: '0.1',
         }
     },
-  }));
+}));
 
 export default function Results() {
     const classes = useStyles();
@@ -62,7 +62,7 @@ export default function Results() {
     return (
         <div className={classes.root}>
             <Container maxWidth="lg">
-            <Typography variant="h2" className={classes.root}>Resultados</Typography>
+                <Typography variant="h2" className={classes.root}>Resultados</Typography>
                 <Grid container spacing={4}>
                     <Grid item xs={6} sm={6}>
                         <Paper className={[classes.paper, classes.cerebroEsquerdo]}>
@@ -79,8 +79,8 @@ export default function Results() {
                 </Grid>
                 <Grid container spacing={2}>
                     <Grid item xs={6} sm={3}>
-                        <ResultsCard 
-                            title="Tubarão" 
+                        <ResultsCard
+                            title="Tubarão"
                             image={Tubarao}
                             imageTitle="tubarão"
                             comportamento="Fazer rápido"
@@ -94,48 +94,88 @@ export default function Results() {
                         />
                     </Grid>
                     <Grid item xs={6} sm={3}>
-                        <ResultsCard 
+                        <ResultsCard
                             title="Lobo"
                             image={Lobo}
                             imageTitle="lobo"
-                            comportamento=""
-                            textoComportamento=""
-                            pontoForte=""
-                            textoPontoForte=""
-                            pontosMelhoria=""
-                            textoPontosMelhoria=""
-                            textoMotivacoes=""
-                            textoValores=""
+                            comportamento="Fazer certo"
+                            textoComportamento="Detalhista,
+                            Organizado,
+                            Estrategista,
+                            Busca do conhecimento,
+                            Pontual,
+                            Conservador,
+                            Previsível"
+                            pontoForte="Organização"
+                            textoPontoForte="Passado, presente e futuro,
+                            Consistência, conformidade e qualidade,
+                            Lealdade e segurança,
+                            Regras e responsabilidade"
+                            pontosMelhoria="Organização"
+                            textoPontosMelhoria="Dificuldades de se adaptar ás mudanças,
+                            Pode impedir o progresso,
+                            Detalhista, estruturado e demasiadamente sistematizado"
+                            textoMotivacoes="Certeza, compreensão exata de quais são as regras,
+                            Conhecimento específico do trabalho,
+                            Ausência de riscos e erros,
+                            Ver produto acabado, meio e fim"
+                            textoValores="Ordem e controle"
                         />
                     </Grid>
                     <Grid item xs={6} sm={3}>
-                        <ResultsCard 
+                        <ResultsCard
                             title="Águia"
                             image={Aguia}
                             imageTitle="Águia"
-                            comportamento=""
-                            textoComportamento=""
-                            pontoForte=""
-                            textoPontoForte=""
-                            pontosMelhoria=""
-                            textoPontosMelhoria=""
-                            textoMotivacoes=""
-                            textoValores=""
+                            comportamento="Fazer diferente"
+                            textoComportamento="Criativo, Intuitivo, Foco no futuro, Distraído, Curioso, Informal/Casual, Flexível"
+                            pontoForte="Idealização"
+                            textoPontoForte="Provoca mudanças, radicais, Antecipar o futuro, Criatividade"
+                            pontosMelhoria="Idealização"
+                            textoPontosMelhoria="Falta de atenção para o aqui e agora, Impaciência e rebeldia, Defender o novo pelo novo"
+                            textoMotivacoes="Liberdade de expressão,
+                            Ausência de controles rígidos,
+                            Ambiente de trabalho descentralizado,
+                            Liberdade para fazer exceções,
+                            Oportunidade para delegar tarefas e detalhes."
+                            textoValores="Criatividade e Liberdade (inspira idéias)."
                         />
                     </Grid>
                     <Grid item xs={6} sm={3}>
-                        <ResultsCard 
+                        <ResultsCard
                             title="Gato"
                             image={Gato}
                             imageTitle="gato"
-                            comportamento=""
-                            textoComportamento=""
-                            pontoForte=""
-                            textoPontoForte=""
-                            pontosMelhoria=""
-                            textoPontosMelhoria=""
-                            textoMotivacoes=""
-                            textoValores=""
+                            comportamento="Fazer junto"
+                            textoComportamento="Sensível,
+                            Relacionamentos,
+                            Time,
+                            Tradicionalistas,
+                            Contribuição,
+                            Busca Harmonia,
+                            Delega autoridade"
+                            pontoForte="Comunicação"
+                            textoPontoForte="Manter comunicação
+                            harmoniosa,
+                            Desenvolver e manter
+                            a cultura empresarial,
+                            Comunicação aberta"
+                            pontosMelhoria="Comunicação"
+                            textoPontosMelhoria="Esconder conflitos,
+                            Felicidade acima dos
+                            resultados,
+                            Manipulação através
+                            dos sentimentos,"
+                            textoMotivacoes="Segurança,
+                            Aceitação social,
+                            Construir o consenso,
+                            Reconhecimento da
+                            equipe,
+                            Supervisão
+                            compreensiva,
+                            Ambiente harmônico,
+                            Trabalho em grupo"
+                            textoValores="Felicidade e igualdade (cultura da empresa – pensa nos outros)."
                         />
                     </Grid>
                 </Grid>
