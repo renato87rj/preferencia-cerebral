@@ -4,12 +4,15 @@ import './styles.css';
 
 import Navbar from './components/navbar';
 import Routes from './router';
+import { ResultsProvider } from './context/results-context';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Routes />
+      <ResultsProvider>
+        <Navbar />
+        <Routes />
+      </ResultsProvider>
     </div>
   );
 }

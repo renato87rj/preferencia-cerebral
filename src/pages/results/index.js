@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import { Grid, makeStyles, Container, Paper, Typography } from '@material-ui/core';
 
@@ -8,6 +8,7 @@ import Lobo from '../../assets/images/lobo.jpg';
 import Aguia from '../../assets/images/aguia.jpg';
 import Gato from '../../assets/images/gato.jpg';
 import Cerebro from '../../assets/images/cerebro-direito.jpg'
+import { ResultsContext } from '../../context/results-context';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -58,6 +59,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Results() {
     const classes = useStyles();
+    const resultsContext = useContext(ResultsContext);
+
+    useEffect(() => {
+        console.log(resultsContext)
+    })
 
     return (
         <div className={classes.root}>
@@ -65,13 +71,13 @@ export default function Results() {
                 <Typography variant="h2" className={classes.root}>Resultados</Typography>
                 <Grid container spacing={4}>
                     <Grid item xs={6} sm={6}>
-                        <Paper className={[classes.paper, classes.cerebroEsquerdo]}>
+                        <Paper className={[classes.paper, classes.cerebroEsquerdo].join(' ')}>
                             <Typography variant="button" paragraph>Lado Esquerdo do Cérebro</Typography>
                             <Typography variant="subtitle2" paragraph>Emocional:</Typography>
                         </Paper>
                     </Grid>
                     <Grid item xs={6} sm={6}>
-                        <Paper className={[classes.paper, classes.cerebroDireito]}>
+                        <Paper className={[classes.paper, classes.cerebroDireito].join(' ')}>
                             <Typography variant="button" paragraph>Lado Direito do Cérebro</Typography>
                             <Typography variant="subtitle2" paragraph>Racional:</Typography>
                         </Paper>
