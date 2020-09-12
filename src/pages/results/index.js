@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { Grid, makeStyles, Container, Paper, Typography } from '@material-ui/core';
 
@@ -60,10 +60,25 @@ const useStyles = makeStyles((theme) => ({
 export default function Results() {
     const classes = useStyles();
     const resultsContext = useContext(ResultsContext);
+    const [escolhaA, setEscolhaA] = useState({valor: 0, resultado: 0})
+    const [escolhaB, setEscolhaB] = useState({valor: 0, resultado: 0})
+    const [escolhaC, setEscolhaC] = useState({valor: 0, resultado: 0})
+    const [escolhaD, setEscolhaD] = useState({valor: 0, resultado: 0})
 
     useEffect(() => {
-        console.log(resultsContext)
-    })
+        const totalValues = Object.values(resultsContext.values);
+
+        setEscolhaA({
+            valor: totalValues.filter(value => {
+                return value === 'A'
+            }).length,
+            resultado: escolhaA['valor'] * 4,
+        });
+
+        console.log(totalValues.filter(value => {
+            return value === 'A'
+        }).length);
+    }, [])
 
     return (
         <div className={classes.root}>
